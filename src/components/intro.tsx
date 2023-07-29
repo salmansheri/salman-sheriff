@@ -58,7 +58,7 @@ const Intro = () => {
           </motion.span>
         </div>
       </div>
-      <motion.p
+      <motion.h1
         className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
         initial={{
           opacity: 0,
@@ -74,7 +74,7 @@ const Intro = () => {
         working as a <strong>Freelancer Contact</strong> for{" "}
         <strong className="italic">Final Projects</strong> Currently working
         with <strong className="underline">Next.js and React.js</strong>
-      </motion.p>
+      </motion.h1>
       <motion.div
         className="flex items-center justify-center space-x-5 flex-col md:flex-row"
         initial={{
@@ -99,30 +99,35 @@ const Intro = () => {
         <a
           target="_blank"
           href="/new-resume.pdf"
-          className="bg-white px-7 py-3 flex items-center gap-2 justify-center w-full md:w-fit rounded-full"
+          download
+          className="bg-white px-7 py-3 flex items-center gap-2 justify-center w-full md:w-fit rounded-full hover:scale-110 active:scale-105 group transition border border-black/10"
         >
-          Download CV <HiDownload size={30} />
+          Download CV{" "}
+          <HiDownload
+            size={20}
+            className="group-hover:translate-y-1 transition opacity-60"
+          />
         </a>
         <a
           target="_blank"
           href="https://www.linkedin.com/in/salman-sheriff-6b3721214/"
-          className="bg-white p-4 flex items-center gap-2 rounded-full w-full md:w-fit justify-center"
+          className="bg-white p-4 flex items-center gap-2 rounded-full w-full md:w-fit justify-center hover:scale-110 active:scale-105 transition  hover:text-gray-800"
         >
-          <BsLinkedin size={30} />
+          <BsLinkedin size={30} className="" />
         </a>
         <a
           target="_blank"
           href="https://github.com/salmansheri"
-          className="bg-white p-4 flex items-center gap-2 rounded-full w-full md:w-fit justify-center"
+          className="bg-white p-4 flex items-center gap-2 rounded-full w-full md:w-fit justify-center hover:scale-110 active:scale-105 transition hover:text-gray-800"
         >
-          <FaGithubSquare size={30} />
+          <FaGithubSquare size={30} className="" />
         </a>
         <a
           target="_blank"
           href="https://twitter.com/sheriffsalman00"
-          className="bg-white p-4 flex items-center gap-2 rounded-full w-full md:w-fit  justify-center"
+          className="bg-white p-4 flex items-center gap-2 rounded-full w-full md:w-fit  justify-center hover:scale-110 active:scale-105 transition hover:text-gray-800"
         >
-          <BsTwitter size={30} />
+          <BsTwitter size={30} className="" />
         </a>
       </motion.div>
     </section>
