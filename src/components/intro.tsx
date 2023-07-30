@@ -6,11 +6,13 @@ import Link from "next/link";
 import { BsArrowRight, BsLinkedin, BsTwitter } from "react-icons/bs";
 
 import { useSectionInView } from "@/hooks";
+import { useActiveSectionContext } from "@/hooks/use-active-section";
 import { FaGithubSquare } from "react-icons/fa";
 import { HiDownload } from "react-icons/hi";
 
 const Intro = () => {
   const { ref } = useSectionInView("Home");
+  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   return (
     <section
       ref={ref}
@@ -30,7 +32,8 @@ const Intro = () => {
             }}
             transition={{
               type: "tween",
-              duration: 0.2,
+              duration: 1,
+              delay: 1,
             }}
           >
             <Image
@@ -55,8 +58,8 @@ const Intro = () => {
             transition={{
               type: "spring",
               stiffness: 125,
-              delay: 0.1,
-              duration: 0.7,
+              delay: 1,
+              duration: 1,
             }}
             className="text-2xl absolute bottom-0 right-0"
           >
@@ -73,6 +76,10 @@ const Intro = () => {
         animate={{
           opacity: 1,
           y: 0,
+        }}
+        transition={{
+          delay: 1,
+          duration: 1,
         }}
       >
         <strong>Hi, I, am Salman Sheriff</strong>, I am{" "}
@@ -92,12 +99,17 @@ const Intro = () => {
           y: 0,
         }}
         transition={{
-          delay: 0.1,
+          delay: 1,
+          duration: 1,
         }}
       >
         <Link
           href="#contact"
           className="bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full w-full md:w-fit justify-center outline-none  hover:scale-110 hover:bg-gray-950 active:scale-105 transition  group"
+          onClick={() => {
+            setActiveSection("Contact");
+            setTimeOfLastClick(Date.now());
+          }}
         >
           Contact me{" "}
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transtion" />
@@ -133,7 +145,7 @@ const Intro = () => {
           href="https://twitter.com/sheriffsalman00"
           className="bg-white p-4 flex items-center gap-2 rounded-full w-full md:w-fit  justify-center hover:scale-110 active:scale-105 transition hover:text-gray-800"
         >
-          <BsTwitter size={30} className="" />
+          <BsTwitter size={30} className="hover:opacity-90" />
         </a>
       </motion.div>
     </section>

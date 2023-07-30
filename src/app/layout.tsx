@@ -8,7 +8,7 @@ import ActiveSectionContextProvider from "@/context/active-section-context";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Salman Sheriff",
+  title: "Salman Sheriff | Developer Portfolio",
   description: "My Portfolio",
 };
 
