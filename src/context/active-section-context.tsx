@@ -1,9 +1,7 @@
 "use client";
 
-import { links } from "@/lib/data";
-import { useState, createContext } from "react";
-
-type SectionName = (typeof links)[number]["name"];
+import type { SectionName } from "@/lib/type";
+import { createContext, useState } from "react";
 
 interface ActiveSectionContextInterface {
   activeSection: SectionName;

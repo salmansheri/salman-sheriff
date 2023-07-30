@@ -5,6 +5,22 @@ import { LuGraduationCap } from "react-icons/lu";
 import Grogstore from "../../public/grog.png";
 import LawDiary from "../../public/lawdiary.png";
 import { StaticImageData } from "next/image";
+import PythonImage from "../../public/images/python.png";
+import HTMLImage from "../../public/images/html-logo.png";
+import CSSImage from "../../public/images/css.png";
+import ReactImage from "../../public/images/react.png";
+import NextjsImage from "../../public/images/nextjs.png";
+import JavaScriptImage from "../../public/images/javascript-logo.png";
+import TypeScriptImage from "../../public/images/typescript.png";
+import PrismaImage from "../../public/images/prisma1.png";
+import Postgres from "../../public/images/postgresql.png";
+import MongoDB from "../../public/images/mongodb.png";
+import Express from "../../public/images/express.png";
+import FramerMotion from "../../public/images/framer.png";
+import Nodejs from "../../public/images/nodejs.png";
+import Git from "../../public/images/github.png";
+import Tailwind from "../../public/images/tailwind.png";
+import Redux from "../../public/images/redux.png";
 
 export const links = [
   {
@@ -89,23 +105,68 @@ export const projectsData: TProjectsData[] = [
 ];
 
 export const skillsData = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Git",
-  "Tailwind",
-  "Prisma",
-  "MongoDB",
-  "Redux",
-  "GraphQL",
-  "Apollo",
-  "Express",
-  "PostgreSQL",
-  "Python",
-  "Django",
-  "Framer Motion",
+  {
+    label: "HTML",
+    src: HTMLImage,
+  },
+  {
+    label: "CSS",
+    src: CSSImage,
+  },
+  {
+    label: "JavaScript",
+    src: JavaScriptImage,
+  },
+  {
+    label: "TypeScript",
+    src: TypeScriptImage,
+  },
+  {
+    label: "React",
+    src: ReactImage,
+  },
+  {
+    label: "Next.js",
+    src: NextjsImage,
+  },
+  {
+    label: "Node.js",
+    src: Nodejs,
+  },
+  {
+    label: "Git",
+    src: Git,
+  },
+  {
+    label: "Tailwind",
+    src: Tailwind,
+  },
+  {
+    label: "Prisma",
+    src: PrismaImage,
+  },
+  {
+    label: "Redux",
+    src: Redux,
+  },
+  {
+    label: "Express",
+    src: Express,
+  },
+  {
+    label: "PostgreSQL",
+    src: Postgres,
+  },
+  {
+    label: "Python",
+    src: PythonImage,
+  },
+  {
+    label: "Framer Motion",
+    src: FramerMotion,
+  },
+  {
+    label: "MongoDB",
+    src: MongoDB,
+  },
 ] as const;

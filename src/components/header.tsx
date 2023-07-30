@@ -5,10 +5,10 @@ import { links } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { twMerge } from "tailwind-merge";
 
 const Header = () => {
-  const { activeSection, setActiveSection } = useActiveSectionContext();
+  const { activeSection, setActiveSection, setTimeOfLastClick } =
+    useActiveSectionContext();
 
   return (
     <header className="z-[999] relative">
@@ -46,7 +46,10 @@ const Header = () => {
                   activeSection === link.name && "text-gray-950",
                 )}
                 href={link.hash}
-                onClick={() => setActiveSection(link.name)}
+                onClick={() => {
+                  setActiveSection(link.name);
+                  setTimeOfLastClick(Date.now());
+                }}
               >
                 {link.name}
                 {link.name === activeSection && (

@@ -1,14 +1,13 @@
 "use client";
 
+import { useSectionInView } from "@/hooks";
 import { TProjectsData, projectsData } from "@/lib/data";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Share } from "lucide-react";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { BsGithub } from "react-icons/bs";
 import SectionHeading from "./section-heading";
-import { Share } from "lucide-react";
-import { useInView, useScroll, useTransform } from "framer-motion";
-import { motion } from "framer-motion";
-import { useActiveSectionContext } from "@/hooks/use-active-section";
 
 const Project = ({ title, description, tags, imageUrl }: TProjectsData) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -66,16 +65,7 @@ const Project = ({ title, description, tags, imageUrl }: TProjectsData) => {
 };
 
 const Projects = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref);
-
-  const { setActiveSection } = useActiveSectionContext();
-
-  useEffect(() => {
-    if (isInView) {
-      setActiveSection("Projects");
-    }
-  }, [isInView, setActiveSection]);
+  const { ref } = useSectionInView("Projects");
   return (
     <section ref={ref} className="scroll-mt-48" id="projects">
       <SectionHeading title="Projects" />
