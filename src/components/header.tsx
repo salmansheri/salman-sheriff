@@ -1,10 +1,15 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useActiveSectionContext } from "@/hooks/use-active-section";
 import { links } from "@/lib/data";
+import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 import Link from "next/link";
+import { twMerge } from "tailwind-merge";
 
 const Header = () => {
+  const { activeSection, setActiveSection } = useActiveSectionContext();
+
   return (
     <header className="z-[999] relative">
       <motion.div
@@ -36,10 +41,25 @@ const Header = () => {
               }}
             >
               <Link
-                className="flex items-center justify-center w-full  hover:text-gray-950 transition "
+                className={cn(
+                  "flex items-center justify-center w-full  hover:text-gray-950 transition",
+                  activeSection === link.name && "text-gray-950"
+                )}
                 href={link.hash}
+                onClick={() => setActiveSection(link.name)}
               >
                 {link.name}
+                {link.name === activeSection && (
+                  <motion.span
+                    layoutId="acitveSection"
+                    transition={{
+                      type: "spring",
+                      stiffness: 380,
+                      damping: 30,
+                    }}
+                    className="bg-gray-100 rounded-full absolute inset-0 -z-10"
+                  ></motion.span>
+                )}
               </Link>
             </motion.li>
           ))}
