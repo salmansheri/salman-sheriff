@@ -19,8 +19,6 @@ const Intro = () => {
     if (inView) {
       setActiveSection("Home");
     }
-
-    
   }, [inView, setActiveSection]);
   return (
     <section

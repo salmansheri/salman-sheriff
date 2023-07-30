@@ -43,7 +43,7 @@ const Header = () => {
               <Link
                 className={cn(
                   "flex items-center justify-center w-full  hover:text-gray-950 transition",
-                  activeSection === link.name && "text-gray-950"
+                  activeSection === link.name && "text-gray-950",
                 )}
                 href={link.hash}
                 onClick={() => setActiveSection(link.name)}
