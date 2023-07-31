@@ -9,6 +9,7 @@ import { useSectionInView } from "@/hooks";
 import { useActiveSectionContext } from "@/hooks/use-active-section";
 import { FaGithubSquare } from "react-icons/fa";
 import { HiDownload } from "react-icons/hi";
+import TypewriterComponent from "typewriter-effect";
 
 const Intro = () => {
   const { ref } = useSectionInView("Home");
@@ -17,7 +18,7 @@ const Intro = () => {
     <section
       ref={ref}
       id="home"
-      className="mb-28 max-w-[50rem] text-justify sm:mb-0 scroll-mt-48"
+      className="mb-28 max-w-[50rem] text-justify sm:mb-0 scroll-mt-48 "
     >
       <div className="flex items-center justify-center">
         <div className="relative">
@@ -82,11 +83,24 @@ const Intro = () => {
           duration: 1,
         }}
       >
-        <strong>Hi, I, am Salman Sheriff</strong>, I am{" "}
-        <strong className="underline">FullStack Developer</strong> and currently
-        working as a <strong>Freelancer Contact</strong> for{" "}
-        <strong className="italic">Final Projects</strong> Currently working
-        with <strong className="underline">Next.js and React.js</strong>
+        <strong>Hi, I, am Salman Sheriff</strong>
+        <div className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-600">
+          <TypewriterComponent
+            options={{
+              strings: [
+                "Fullstack web developer",
+                "Frontend Developer",
+                "Backend Developer",
+                "React Native Developer",
+                "Svelte Developer",
+                "Next.js Developer",
+                "Node.js Developer",
+              ],
+              autoStart: true,
+              loop: true,
+            }}
+          />
+        </div>
       </motion.h1>
       <motion.div
         className="flex items-center justify-center space-x-5 flex-col md:flex-row"

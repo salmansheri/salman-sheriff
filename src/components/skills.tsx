@@ -12,7 +12,7 @@ const Skills = () => {
     <section
       id="skills"
       ref={ref}
-      className="min-h-screen mb-28 max-w-[53rem] mx-auto scroll-mt-28"
+      className="min-h-screen mb-28 max-w-[53rem] mx-auto scroll-mt-28 mt-52 dark:text-gray-50"
     >
       <SectionHeading title="Skills" />
       <div className="flex flex-row flex-wrap gap-10 items-center justify-center">

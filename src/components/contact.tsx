@@ -1,10 +1,11 @@
 "use client";
 
-import { useSectionInView } from "@/hooks";
-import SectionHeading from "./section-heading";
-import { FaPaperPlane } from "react-icons/fa";
-import { motion } from "framer-motion";
 import { sendEmail } from "@/actions/send-email";
+import { useSectionInView } from "@/hooks";
+import { motion } from "framer-motion";
+import Button from "./form-button";
+import SectionHeading from "./section-heading";
+import { toast } from "react-hot-toast";
 
 const animationVariant = {
   initial: {
@@ -28,7 +29,7 @@ const Contact = () => {
       initial="initial"
       whileInView="animate"
       ref={ref}
-      className="scroll-mt-28 mb-28 sm:mb-40 min-h-screen w-[min(100%,38rem)]"
+      className="scroll-mt-28 mb-28 sm:mb-40 min-h-screen w-[min(100%,38rem)] dark:text-gray-50"
       id="contact"
     >
       <SectionHeading title="Contact Me" />
@@ -39,7 +40,14 @@ const Contact = () => {
       </p>
       <form
         action={async (formData) => {
-          await sendEmail(formData);
+          // @ts-ignore
+          const { data, error } = await sendEmail(formData);
+
+          if (error) {
+            return toast.error("Something went Wrong 😢");
+          }
+
+          return toast.success("Email send successfully ☺️🙌");
         }}
         className="mt-10 flex flex-col space-y-5"
       >
@@ -48,24 +56,18 @@ const Contact = () => {
           type="email"
           required
           placeholder="Enter Email"
-          className="p-2 focus:outline-none focus:ring-1 focus:ring-black rounded-lg border border-black/10 "
+          className="p-2 focus:outline-none focus:ring-1 focus:ring-black rounded-lg border border-black/10 bg-transparent dark:border dark:border-white/10"
           maxLength={500}
         />
         <textarea
           name="message"
           required
-          className="h-32 rounded-lg border focus:ring-1 focus:ring-black focus:outline-none p-2 border-black/10 mt-10"
+          className="h-32 rounded-lg border focus:ring-1 focus:ring-black focus:outline-none p-2 border-black/10 mt-10 bg-transparent dark:border dark:border-white/10"
           placeholder="Enter Message"
           maxLength={1000}
         />
         <div>
-          <button
-            type="submit"
-            className="inline-flex mt-10 items-center justify-center bg-black px-4 py-2 text-white font-bold rounded-lg md:w-fit gap-x-1 w-full   trasition-all hover:bg-black/80 hover:scale-110 active:scale-105 group dark:bg-white dark:text-black"
-          >
-            Submit
-            <FaPaperPlane className=" transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />
-          </button>
+          <Button />
         </div>
       </form>
     </motion.section>

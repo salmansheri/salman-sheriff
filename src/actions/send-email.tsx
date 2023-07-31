@@ -1,6 +1,8 @@
 "use server";
 
+import ContactFormEmail from "@/lib/email/contact-form-email";
 import { Resend } from "resend";
+import { CreateEmailResponse } from "resend/build/src/emails/interfaces";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -20,13 +22,16 @@ export const sendEmail = async (formData: FormData) => {
     };
   }
 
+  let data;
+
   try {
-    resend.emails.send({
+    data = await resend.emails.send({
       from: "onboarding@resend.dev",
       to: "sheriffsalman00@gmail.com",
       subject: "Message From Contact in New Portfolio",
       reply_to: senderEmail,
-      text: `Message From: ${senderEmail} Message: ${message}`,
+      // text: `Message From: ${senderEmail} Message: ${message}`,
+      react: <ContactFormEmail message={message} senderEmail={senderEmail} />,
     });
   } catch (error) {
     console.log(error);
@@ -42,4 +47,8 @@ export const sendEmail = async (formData: FormData) => {
     }
     return error;
   }
+
+  return {
+    data: data,
+  };
 };

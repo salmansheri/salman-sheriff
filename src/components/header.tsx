@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <header className="z-[999] relative">
       <motion.div
-        className="fixed top-0 left-1/2 h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5] sm:w-[36rem] sm:rounded-full "
+        className="fixed top-0 left-1/2 h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5] sm:w-[36rem] sm:rounded-full dark:bg-gray-900"
         initial={{
           y: -100,
           x: "-50%",
@@ -42,8 +42,9 @@ const Header = () => {
             >
               <Link
                 className={cn(
-                  "flex items-center justify-center w-full  hover:text-gray-950 transition",
-                  activeSection === link.name && "text-gray-950",
+                  "flex items-center justify-center w-full  hover:text-gray-950 transition dark:text-gray-50 dark:hover:text-gray-100",
+                  activeSection === link.name &&
+                    "text-gray-950 dark:text-gray-100"
                 )}
                 href={link.hash}
                 onClick={() => {
@@ -60,7 +61,7 @@ const Header = () => {
                       stiffness: 380,
                       damping: 30,
                     }}
-                    className="bg-gray-100 rounded-full absolute inset-0 -z-10"
+                    className="bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-gray-900 text-white"
                   ></motion.span>
                 )}
               </Link>
