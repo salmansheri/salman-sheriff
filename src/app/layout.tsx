@@ -2,7 +2,6 @@ import Header from "@/components/header";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { twMerge } from "tailwind-merge";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import ToasterProvider from "@/Providers/toaster-provider";
 import Footer from "@/components/footer";
@@ -27,7 +26,7 @@ export default function RootLayout({
       <body
         className={cn(
           inter.className,
-          "pt-32 bg-gray-50 text-gray-950 dark:bg-gray-900  dark:text-opacity-90 "
+          "pt-32 bg-gray-50 text-gray-950 dark:bg-gray-900  dark:text-opacity-90 ",
         )}
       >
         <ThemeContextProvider>
