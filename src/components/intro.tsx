@@ -83,7 +83,7 @@ const Intro = () => {
           duration: 1,
         }}
       >
-        <strong>Hi, I, am Salman Sheriff</strong>
+        <strong>Hi, I am Salman Sheriff</strong>
         <div className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-600">
           <TypewriterComponent
             options={{

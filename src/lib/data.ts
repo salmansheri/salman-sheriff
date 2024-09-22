@@ -50,6 +50,8 @@ export type TProjectsData = {
   description: string;
   tags: string[];
   imageUrl: StaticImageData;
+  githubUrl: string;
+  liveUrl: string;
 };
 
 export const projectsData: TProjectsData[] = [
@@ -65,6 +67,8 @@ export const projectsData: TProjectsData[] = [
       "Typescript",
     ],
     imageUrl: ClinicManager,
+    githubUrl: "https://github.com/salmansheri/clinic_manager",
+    liveUrl: "https://clinic-manager-nu.vercel.app",
   },
   {
     title: "Finaco",
@@ -78,6 +82,8 @@ export const projectsData: TProjectsData[] = [
       "Clerk Authentication",
     ],
     imageUrl: Finaco,
+    githubUrl: "https://github.com/salmansheri/finaco",
+    liveUrl: "https://finaco-one.vercel.app",
   },
 ];
 

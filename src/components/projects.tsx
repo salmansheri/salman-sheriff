@@ -9,7 +9,14 @@ import React, { useRef } from "react";
 import { BsGithub } from "react-icons/bs";
 import SectionHeading from "./section-heading";
 
-const Project = ({ title, description, tags, imageUrl }: TProjectsData) => {
+const Project = ({
+  title,
+  description,
+  tags,
+  imageUrl,
+  githubUrl,
+  liveUrl,
+}: TProjectsData) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -45,13 +52,15 @@ const Project = ({ title, description, tags, imageUrl }: TProjectsData) => {
         </ul>
         <div className="mt-8 flex flex-row items-center space-x-5 dark:text-gray-50">
           <a
-            href=""
+            href={githubUrl}
+            target="_blank"
             className="text-gray-800 dark:text-gray-50 hover:text-gray-950"
           >
             <BsGithub size={30} />
           </a>
           <a
-            href=""
+            target="_blank"
+            href={liveUrl}
             className="text-gray-800 dark:text-gray-50 hover:text-gray-950"
           >
             <Share />
@@ -78,7 +87,7 @@ const Projects = () => {
     <section ref={ref} className="scroll-mt-48 dark:text-gray-50" id="projects">
       <SectionHeading title="Projects" />
       <div>
-        {projectsData.map((project) => (
+        {projectsData.map((project: TProjectsData) => (
           <React.Fragment key={project.title}>
             <Project {...project} />
           </React.Fragment>
