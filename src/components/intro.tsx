@@ -3,8 +3,8 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import Photo from "../../public/my_photo.jpg";
 import { BsArrowRight, BsLinkedin, BsTwitter } from "react-icons/bs";
-
 import { useSectionInView } from "@/hooks";
 import { useActiveSectionContext } from "@/hooks/use-active-section";
 import { FaGithubSquare } from "react-icons/fa";
@@ -38,7 +38,7 @@ const Intro = () => {
             }}
           >
             <Image
-              src="/my_photo.jpg"
+              src={Photo}
               alt="myphoto"
               width={192}
               height={192}
@@ -103,7 +103,7 @@ const Intro = () => {
         </div>
       </motion.h1>
       <motion.div
-        className="flex items-center justify-center space-x-5 flex-col md:flex-row"
+        className="flex items-center justify-center gap-5 flex-col md:flex-row"
         initial={{
           y: 100,
           opacity: 0,
@@ -130,7 +130,7 @@ const Intro = () => {
         </Link>
         <a
           target="_blank"
-          href="/new-resume.pdf"
+          href="/Salman_resume1.pdf"
           download
           className="bg-white px-7 py-3 flex items-center gap-2 justify-center w-full md:w-fit rounded-full hover:scale-110 active:scale-105 group transition border border-black/10"
         >
