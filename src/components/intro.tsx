@@ -130,7 +130,7 @@ const Intro = () => {
         </Link>
         <a
           target="_blank"
-          href="/Salman_resume1.pdf"
+          href="/Salman_resume1-2.pdf"
           download
           className="bg-white px-7 py-3 flex items-center gap-2 justify-center w-full md:w-fit rounded-full hover:scale-110 active:scale-105 group transition border border-black/10"
         >

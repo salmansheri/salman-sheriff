@@ -1,5 +1,4 @@
 import ClinicManager from "../../public/clinicmanager.png";
-import Finaco from "../../public/finacohome.png";
 import { StaticImageData } from "next/image";
 import PythonImage from "../../public/images/python.png";
 import HTMLImage from "../../public/images/html-logo.png";
@@ -17,6 +16,7 @@ import Nodejs from "../../public/images/nodejs.png";
 import Git from "../../public/images/github.png";
 import Tailwind from "../../public/images/tailwind.png";
 import Redux from "../../public/images/redux.png";
+import WriteIt from "../../public/writeit.png";
 
 export const links = [
   {
@@ -71,8 +71,8 @@ export const projectsData: TProjectsData[] = [
     liveUrl: "https://clinic-manager-nu.vercel.app",
   },
   {
-    title: "Finaco",
-    description: "Financial dashboard manager",
+    title: "WriteIt",
+    description: "A Website Helpful for Managing Journals",
     tags: [
       "React",
       "TypeScript",
@@ -81,9 +81,9 @@ export const projectsData: TProjectsData[] = [
       "Tailwind",
       "Clerk Authentication",
     ],
-    imageUrl: Finaco,
-    githubUrl: "https://github.com/salmansheri/finaco",
-    liveUrl: "https://finaco-one.vercel.app",
+    imageUrl: WriteIt,
+    githubUrl: "https://github.com/salmansheri/Journal-app-by-salman",
+    liveUrl: "https://write-it-by-salman.vercel.app",
   },
 ];
 
