@@ -31,14 +31,13 @@ const About = () => {
       whileInView="animate"
     >
       <SectionHeading title="About Me" />
-      <p className="mb-3">
-        I am Salman Sheriff, I am from Krishnagiri, I am a student with
-        experience in making projects. I am Master of computer application
-        Graduate and a Freelancer.{" "}
-        <strong className="underline">FullStack Developer</strong> and currently
-        working as a <strong>Freelancer Contact</strong> for{" "}
-        <strong className="italic">Final Projects</strong> Currently working
-        with <strong className="underline">Next.js and React.js</strong>
+      <p className="mb-3 text-justify">
+        I am Salman Sheriff, an aspiring Fullstack Developer from Krishnagiri with a Master&apos;s degree in Computer Applications. Passionate about building impactful web applications, I specialize in crafting dynamic and responsive projects using modern technologies.
+
+        Currently, I work as a freelancer, helping clients bring their ideas to life, especially in the domain of final projects. My expertise lies in Next.js and React.js, and I constantly strive to learn and implement the latest tools and practices in web development.
+
+        With a strong foundation in full-stack development, I am dedicated to delivering high-quality solutions that solve real-world problems.
+
       </p>
 
       <p></p>
